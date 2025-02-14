@@ -31,7 +31,7 @@ const Vediocontainer = () => {
 
     const fetchVideosByCategory = async (category) => {
         try {
-            const response = await axios.get(`https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=10&q=${category}&type=video&key=${API_Key}`)
+            const response = await axios.get(`https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=12&q=${category}&type=video&key=${API_Key}`)
           // dispatch(setVedio(response.data.items));
           // console.log(response.data.items) 
           const videoItems = response.data.items
