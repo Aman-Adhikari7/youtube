@@ -4,6 +4,8 @@ import Navbar from "./Componenents/Navbar";
 import Sidebar from "./Componenents/Sidebar";
 import Body from "./Componenents/Body";
 import Watch from "./Componenents/Watch";
+// import Vediocontainer from "./Componenents/vediocontainer";
+import Shorts from "./Componenents/SidebarsComp/Shorts";
 
 
 const appRouter= createBrowserRouter([
@@ -18,6 +20,13 @@ const appRouter= createBrowserRouter([
       {
          path:"/watch",
          element:<Watch/>
+      },
+      {
+           path:'/home',
+           element:<Feed/>
+      },{
+        path:'Shorts',
+        element:<Shorts/>
       }
     ]
   }

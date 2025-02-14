@@ -5,7 +5,7 @@ import Vediocontainer from "./vediocontainer";
 const Feed = () => {
     //this is feed section
   return (
-    <div>
+    <div className="sm:px-[50px] ">
         <Buttons/>
         <Vediocontainer/>
     </div>

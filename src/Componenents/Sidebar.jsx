@@ -9,7 +9,10 @@ import { IoTrophyOutline } from "react-icons/io5"
 import { MdNewspaper } from "react-icons/md"
 import { SiYoutubeshorts } from "react-icons/si";
 import { MdOutlineSubscriptions } from "react-icons/md";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { Link } from "react-router-dom";
+import { useState } from "react";
+import { setCategory } from "../utils/appSlice";
 
 const Subscription=[
     {
@@ -97,25 +100,40 @@ const Latestitems =[
     },
 ]
 
+   
+
+  
+
 const Sidebar = () => {
+
+    const dispatch= useDispatch()
+
+    const[active,setActive]=useState('All')
+
+    const handleSearch = (category) => {
+        if(active !== category){
+          setActive(category)
+          dispatch(setCategory(category))
+        }
+        };
 
     const open = useSelector((state)=> state.apps.open) //redux
 
     console.log(open)
   return (
     //sidebar toggler main div
-    <div className={` ${open ? "w-[210px]   h-full transition-all duration-100 absolute z-12 top-11 bg-white overflow-y-auto custom-scrollbar  " : "w-[0] top-11 bg-white absolute  overflow-hidden transition-all duration-300 ease-in-out "} `} >
+    <div className={` ${open ? "w-[210px] scroll-smooth   h-full transition-all duration-100 absolute z-12 top-11 bg-white overflow-y-auto custom-scrollbar  " : "w-[0] top-11 bg-white absolute  overflow-hidden transition-all duration-300 ease-in-out "} `} >
         <div className=" h-screen ">
               
               <div className="flex flex-col mx-2 mr-4 border-b pb-2 ">
                   <div className="flex  mt-2 p-2 rounded-xl items-center bg-[#E5E5E5]  font-medium">
                     <IoMdHome className="text-xl mr-8 " />  
-                    Home
+                    <Link to={'/home'}>Home</Link>
                    </div>
 
                   <div className="flex  p-2 rounded-xl items-center hover:bg-[#E5E5E5]  font-medium">
                     <SiYoutubeshorts className="text-xl mr-8 " />  
-                    Shorts
+                    <Link to={'/Shorts'}>Shorts</Link>
                    </div>
 
                   <div className="flex   p-2 rounded-xl items-center hover:bg-[#E5E5E5]  font-medium">
@@ -134,7 +152,7 @@ const Sidebar = () => {
               {
                           Latestitems.map((items,index)=>{
                             return(
-                                <div key={index} className="flex   p-2 rounded-xl items-center hover:bg-[#E5E5E5]  font-medium">
+                                <div key={index} onClick={()=>handleSearch(items.title)} className="flex   p-2 rounded-xl items-center hover:bg-[#E5E5E5] cursor-pointer font-medium">
                                      {items.icon}
                                      {items.title}
                                     </div>

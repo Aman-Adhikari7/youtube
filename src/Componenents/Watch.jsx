@@ -5,7 +5,7 @@ import { API_Key } from "../Constants/youtube";
 import { AiOutlineDislike, AiOutlineLike } from "react-icons/ai"
 import { RiShareForwardLine } from "react-icons/ri"
 import { IoMdDownload } from "react-icons/io";
-// import Suggestions from "./Suggestion";
+import Suggestions from "./Suggestion";
 import Buttons from "./Topbuttonlist";
 import Comments from "./Comment";
 
@@ -78,43 +78,48 @@ const Watch = () => {
           allowFullScreen
         ></iframe>
 
-        <div className="flex flex-col p-4">
+        <div className="flex flex-col p-4 ">
           <h1 className="text-xl font-bold">{singleVedio.title}</h1>
-          <div className="flex items-center  p-4">
 
-            <div className="flex items-center ">
-              {profile && <img className="h-10 rounded-full border mr-2" src={profile} alt="Channel" />}
-              <h1 className="font-medium text-lg ">{singleVedio.channelTitle}</h1>
-            </div>
-            <button className="px-4 py-2 bg-black text-white rounded-full ml-6">Subscribe</button>
+          <div className="md:flex md:justify-between">
+          <div className="flex items-center   p-4">
+
+<div className="flex items-center  ">
+  {profile && <img className="h-10 rounded-full border mr-2" src={profile} alt="Channel" />}
+  <h1 className="font-medium text-lg  ">{singleVedio.channelTitle}</h1>
+</div>
+<button className="px-4 py-2 bg-black text-white rounded-full ml-6">Subscribe</button>
+</div>
+
+<div className="flex mb-4">
+
+<div className="flex p-2 border rounded-full items-center shadow-lg">
+
+<p className="text-xl"><AiOutlineLike /></p>
+<p className="border-r-2 px-2">  {formatLikes(likeCount) || "Loading..."}</p>
+<p className="text-xl px-2 mt-1"><AiOutlineDislike/></p>
+
+</div>
+
+
+<a  className="rounded-full flex items-center shadow-lg border-2  px-4  mx-4" href={`https://www.youtube.com/watch?v=${vedioId}`} target="_blank" rel="noreferrer">
+<RiShareForwardLine className="mt-1 text-2xl mr-2" />
+
+  <p>Share</p>
+</a>
+
+<a  className="rounded-full md:hidden flex items-center shadow-lg border-2  px-4  mx-4" href={`https://publer.io/tools/youtube-video-downloader`} target="_blank" rel="noreferrer">
+<IoMdDownload 
+className="mt-1 text-2xl mr-2" />
+
+  <p>Download</p>
+</a>
+
+
+</div>
+
           </div>
-
-          <div className="flex mb-4">
-
-            <div className="flex p-2 border rounded-full items-cente shadow-lg">
-
-            <p className="text-xl"><AiOutlineLike /></p>
-            <p className="border-r-2 px-2">  {formatLikes(likeCount) || "Loading..."}</p>
-            <p className="text-xl px-2 mt-1"><AiOutlineDislike/></p>
-
-            </div>
-
-
-            <a  className="rounded-full flex items-center shadow-lg border-2  px-4  mx-4" href={`https://www.youtube.com/watch?v=${vedioId}`} target="_blank" rel="noreferrer">
-            <RiShareForwardLine className="mt-1 text-2xl mr-2" />
-
-              <p>Share</p>
-            </a>
-
-            <a  className="rounded-full flex items-center shadow-lg border-2  px-4  mx-4" href={`https://publer.io/tools/youtube-video-downloader`} target="_blank" rel="noreferrer">
-            <IoMdDownload 
-            className="mt-1 text-2xl mr-2" />
-
-              <p>Download</p>
-            </a>
-
-
-          </div>
+    
 
           <div className=" shadow-lg rounded-2xl bg-gray-100 p-4  ">
           <p
@@ -137,7 +142,7 @@ const Watch = () => {
       </div>
       <Buttons/>
 
-       {/* <Suggestions videoId={vedioId}/> */}
+       <Suggestions  videoId={vedioId}/>
        <Comments/>
     </div>
   );

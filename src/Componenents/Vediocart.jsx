@@ -51,10 +51,10 @@ const Vediocart = ({item}) => {
 
     /// vedio cart section all dynamic contents
           
-    <div className="mt-4    flex flex-col overflow-hidden   " >
+    <div className="mt-4   overflow-hidden   " >
         
         
-         <img className=" rounded-2xl m-4 h-[243px]  object-cover    " src={item.snippet.thumbnails.high.url}/>
+         <img className=" rounded-3xl p-4 md:h-[300px] lg:h-[300px] h-[333px]  object-cover  w-full   " src={item.snippet.thumbnails.high.url}/>
           <div className="flex ">
 
          <img className="h-10 rounded-full mr-2 ml-4" src={profile}/>

@@ -9,6 +9,7 @@ import { toggleSidebar } from "../utils/appSlice";
 
 
 
+
 const Navbar = () => {
 
         const dispatch = useDispatch()
@@ -24,7 +25,10 @@ const Navbar = () => {
                      <HiMiniBars3  className="text-2xl"/>
                 </div>
                  <div>
-                     <img className="h-14 pl-6 "  src="https://logos-world.net/wp-content/uploads/2020/04/YouTube-Logo.png"/>
+                 
+                  <img className="h-14 pl-6 "  src="https://logos-world.net/wp-content/uploads/2020/04/YouTube-Logo.png"/>
+                
+                     
                  </div>
             </div>
 
