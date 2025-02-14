@@ -128,12 +128,12 @@ const Sidebar = () => {
               <div className="flex flex-col mx-2 mr-4 border-b pb-2 ">
                   <div className="flex  mt-2 p-2 rounded-xl items-center bg-[#E5E5E5]  font-medium">
                     <IoMdHome className="text-xl mr-8 " />  
-                    <Link to={'/home'}>Home</Link>
+                    <Link to="/home">Home</Link>
                    </div>
 
                   <div className="flex  p-2 rounded-xl items-center hover:bg-[#E5E5E5]  font-medium">
                     <SiYoutubeshorts className="text-xl mr-8 " />  
-                    <Link to={'/Shorts'}>Shorts</Link>
+                    <Link to="Shorts">Shorts</Link>
                    </div>
 
                   <div className="flex   p-2 rounded-xl items-center hover:bg-[#E5E5E5]  font-medium">

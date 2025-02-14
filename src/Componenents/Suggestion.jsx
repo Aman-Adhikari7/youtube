@@ -91,9 +91,9 @@ const Suggestions = ({ videoId }) => {
   }, [videoId]);
 
   return (
-    <div className="p-4 w-full flex flex-col ">
+    <div className="p-4 max-sm:p-0 max-sm:pt-2 max-sm:pb-2 w-full flex flex-col ">
       <h2>Related Videos</h2>
-      <div className="w-full  md:flex flex-col  p-4 md:p-0 mx-4 ">
+      <div className="w-full  md:flex flex-col  p-4 max-sm:p-0 md:p-0 mx-4 max-sm:mx-0 ">
         {relatedVideos.map((video) => (
 
          <Link key={video.id.videoId} to={`/watch?v=${video.id.videoId}`}>

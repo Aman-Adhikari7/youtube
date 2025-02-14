@@ -102,15 +102,15 @@ const Watch = () => {
 </div>
 
 
-<a  className="rounded-full flex items-center shadow-lg border-2  px-4  mx-4" href={`https://www.youtube.com/watch?v=${vedioId}`} target="_blank" rel="noreferrer">
-<RiShareForwardLine className="mt-1 text-2xl mr-2" />
+<a  className="rounded-full flex items-center shadow-lg border-2  px-4  max-sm:mx-2" href={`https://www.youtube.com/watch?v=${vedioId}`} target="_blank" rel="noreferrer">
+<RiShareForwardLine className="mt-1 text-2xl mr-2 max-sm:mr-0" />
 
   <p>Share</p>
 </a>
 
-<a  className="rounded-full md:hidden flex items-center shadow-lg border-2  px-4  mx-4" href={`https://publer.io/tools/youtube-video-downloader`} target="_blank" rel="noreferrer">
+<a  className="rounded-full md:hidden flex items-center shadow-lg border-2  px-4  mx-4 max-sm:mx-0" href={`https://publer.io/tools/youtube-video-downloader`} target="_blank" rel="noreferrer">
 <IoMdDownload 
-className="mt-1 text-2xl mr-2" />
+className="mt-1 text-2xl mr-2 max-sm:mr-0" />
 
   <p>Download</p>
 </a>

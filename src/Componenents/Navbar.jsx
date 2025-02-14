@@ -26,7 +26,7 @@ const Navbar = () => {
                 </div>
                  <div>
                  
-                  <img className="h-14 pl-6 "  src="https://logos-world.net/wp-content/uploads/2020/04/YouTube-Logo.png"/>
+                  <img className="h-14 pl-6  max-sm:h-10"  src="https://logos-world.net/wp-content/uploads/2020/04/YouTube-Logo.png"/>
                 
                      
                  </div>
@@ -35,7 +35,7 @@ const Navbar = () => {
             
 
             <div className="flex items-center   ">
-                <CiSearch  className="text-2xl mr-8"/>
+                <CiSearch  className="text-2xl mr-8 max-sm:mr-2"/>
                 <FaMicrophone className="mr-4" />
                 <div className="flex items-center rounded-full py-1 bg-[#E5E5E5] px-4 mr-6 ">
                   <  PiPlusThin className="text-lg mr-2" />
